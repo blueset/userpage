@@ -3,6 +3,8 @@ import { CategoryType } from "../types";
 import { Typography, makeStyles, Grid } from "@material-ui/core";
 import { Entry } from "./Entry";
 import { HiddenEntries } from "./HiddenEntries";
+import { t_ } from "../utils";
+import { useTranslation } from "react-i18next";
 
 type CategoryProps = {
     data: CategoryType,
@@ -10,6 +12,9 @@ type CategoryProps = {
 }
 
 export function Category(props: CategoryProps) {
+  
+    const { i18n } = useTranslation();
+
     const styleSet = makeStyles({
         title: {
             fontWeight: 200,
@@ -23,7 +28,7 @@ export function Category(props: CategoryProps) {
     return (
       <section className="category">
         <Typography variant="h3" component="h2" className={styleSet.title}>
-          {props.data.name.en}
+          {t_(i18n, props.data.name)}
         </Typography>
         <Grid container spacing={3}>
           {props.data.items.map((v, idx) => (

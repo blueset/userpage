@@ -1,8 +1,9 @@
 import { ItemType } from "../types";
 import React from "react";
 import { Dialog, DialogContent, DialogContentText, DialogActions, Button, Typography, makeStyles } from "@material-ui/core";
-import { truthyString } from "../utils";
+import { truthyString, t_, commonMarkdownConfigs } from "../utils";
 import Markdown from "markdown-to-jsx";
+import { useTranslation } from "react-i18next";
 
 type EntryDetailsProps = {
     data: ItemType,
@@ -35,6 +36,8 @@ const styleConfig = makeStyles({
 export function EntryDetails(props: EntryDetailsProps) {
 
   const styleSet = styleConfig();
+  const { i18n } = useTranslation();
+  const details = t_(i18n, props.data.details);
 
     return (
       <Dialog
@@ -69,14 +72,18 @@ export function EntryDetails(props: EntryDetailsProps) {
                 component="h3"
                 className={styleSet.title}
               >
-                <Markdown options={{ forceBlock: false }}>
-                  {props.data.desc?.en}
+                <Markdown
+                  options={{ forceBlock: false, ...commonMarkdownConfigs }}
+                >
+                  {t_(i18n, props.data.desc)}
                 </Markdown>
               </Typography>
             </div>
-            {truthyString(props.data.details?.en) && (
-              <Markdown options={{ forceBlock: true }}>
-                {props.data.details?.en}
+            {truthyString(details) && (
+              <Markdown
+                options={{ forceBlock: true, ...commonMarkdownConfigs }}
+              >
+                {details}
               </Markdown>
             )}
           </DialogContentText>

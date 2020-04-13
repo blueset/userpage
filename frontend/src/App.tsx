@@ -72,7 +72,7 @@ class App extends React.Component<{}, AppState> {
   }
 
   async onLogIn(data: TelegramUser) {
-
+    await this.load(data);
   }
 
   render() {

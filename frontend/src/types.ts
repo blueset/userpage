@@ -1,7 +1,6 @@
 export type LangString = {
     en: string,
-    "zh-hans"?: string,
-    "zh-hant"?: string,
+    "zh"?: string,
     "ja"?: string,
     "08n"?: string
 };

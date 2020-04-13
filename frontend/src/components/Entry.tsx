@@ -3,6 +3,8 @@ import React from "react"
 import { Grid, Card, CardContent, Typography, makeStyles, CardActionArea, CardMedia } from "@material-ui/core";
 import Markdown from "markdown-to-jsx";
 import { EntryDetails } from "./EntryDetails";
+import { t_, commonMarkdownConfigs } from "../utils";
+import { useTranslation } from "react-i18next";
 
 
 type EntryProps = {
@@ -14,6 +16,8 @@ export function Entry(props: EntryProps) {
     let widthSubtraction = 0;
     if (props.data.leftImage) widthSubtraction += 6;
     if (props.data.rightImage) widthSubtraction += 6;
+
+    const { i18n } = useTranslation();
 
     const [open, setOpen] = React.useState(false);
 
@@ -37,7 +41,7 @@ export function Entry(props: EntryProps) {
       },
     })();
 
-    const desc = props.data.desc?.en;
+    const desc = t_(i18n, props.data.desc);
 
     const openDetails = () => {
         setOpen(true);
@@ -63,7 +67,11 @@ export function Entry(props: EntryProps) {
                 color="textSecondary"
                 className={styleSet.description}
               >
-                <Markdown options={{forceInline: true}}>{desc}</Markdown>
+                <Markdown
+                  options={{ forceInline: true, ...commonMarkdownConfigs }}
+                >
+                  {desc}
+                </Markdown>
               </Typography>
             </CardContent>
             {props.data.rightImage && (

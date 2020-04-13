@@ -1,0 +1,14 @@
+{
+  "goToTop": "Go to top",
+  "pageTitle": "User:<1><0></0></1>Eana Hufwe",
+  "pageDesc": "Eana’s user page. A simple and rough about-me page heavily inspired by <2>Wikipedia Userboxes</2>.",
+  "hidden": {
+    "line2": {
+      "unauth": "",
+      "authed": ""
+    },
+    "line1": "",
+    "line1_plural": ""
+  },
+  "langSwitcher": "Switch language"
+}

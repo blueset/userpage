@@ -1,7 +1,9 @@
 import React from "react";
-import { Typography, Hidden, Link, makeStyles, Slide, useScrollTrigger, AppBar, Toolbar, IconButton } from "@material-ui/core";
+import { Typography, Hidden, Link, makeStyles, Slide, useScrollTrigger, AppBar, Toolbar, IconButton, Tooltip } from "@material-ui/core";
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import TelegramLoginButton, { TelegramUser } from "telegram-login-button";
+import { useTranslation, Trans } from "react-i18next";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 
 type ShowWhenScrolledDownProps = {
@@ -40,71 +42,85 @@ type HeaderProps = {
 }
 
 export function Header(props: HeaderProps) {
-         const styleSet = makeStyles({
-           title: {
-             fontWeight: 700,
-             letterSpacing: "-0.2rem",
-             lineHeight: 0.8,
-             marginBottom: "0.2em",
-           },
-           toolbarTitle: {
-             fontWeight: 700,
-             letterSpacing: "-0.02em",
-             flexGrow: 1,
-           },
-           subtitle: {
-             lineHeight: 1,
-           },
-           socialButton: {
-             minHeight: "4rem",
-             padding: "1rem 0",
-             textAlign: "right",
-           },
-         })();
+  const styleSet = makeStyles({
+    title: {
+      fontWeight: 700,
+      letterSpacing: "-0.2rem",
+      lineHeight: 0.8,
+      marginBottom: "0.2em",
+    },
+    toolbarTitle: {
+      fontWeight: 700,
+      letterSpacing: "-0.02em",
+      flexGrow: 1,
+    },
+    subtitle: {
+      lineHeight: 1,
+    },
+    socialButton: {
+      minHeight: "4rem",
+      padding: "1rem 0",
+      textAlign: "right",
+    },
+    telegramButton: {
+      display: "inline"
+    },
+  })();
 
-         return (
-           <header id="header-anchor">
-             <ShowWhenScrolledDown>
-               <AppBar>
-                 <Toolbar>
-                   <Typography variant="h6" className={styleSet.toolbarTitle}>
-                     Eana’s User Page
-                   </Typography>
-                   <IconButton
-                     aria-label="Go to top of the page"
-                     aria-controls="menu-appbar"
-                     aria-haspopup="true"
-                     onClick={backToTopOnClick}
-                     color="inherit"
-                   >
-                     <ArrowUpwardIcon />
-                   </IconButton>
-                 </Toolbar>
-               </AppBar>
-             </ShowWhenScrolledDown>
-             <div className={styleSet.socialButton}>
-               <TelegramLoginButton
-                 botName="utsdskgmbot"
-                 dataOnauth={props.onTelegramAuth}
-               />
-             </div>
-             <Typography variant="h2" component="h1" className={styleSet.title}>
-               User:
-               <Hidden only={["sm", "md", "lg", "xl"]}>
-                 <br />
-               </Hidden>
-               Eana Hufwe
-             </Typography>
-             <Typography variant="subtitle1" className={styleSet.subtitle}>
-               Eana’s user page. A simple and rough about-me page heavily inspired by{" "}
-               <Link
-                 href="https://en.wikipedia.org/wiki/Wikipedia:Userboxes"
-                 color="primary"
-               >
-                 Wikipedia Userboxes
-               </Link>
-               .
-             </Typography>
-           </header>
-         );
-       }
+  const { t, i18n } = useTranslation();
+
+  return (
+    <header id="header-anchor">
+      <ShowWhenScrolledDown>
+        <AppBar>
+          <Toolbar>
+            <Typography variant="h6" className={styleSet.toolbarTitle}>
+              Eana’s User Page
+            </Typography>
+            <Tooltip title={t("goToTop", "Go to top") as string}>
+              <IconButton
+                aria-label={t("goToTop", "Go to top")}
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={backToTopOnClick}
+                color="inherit"
+              >
+                <ArrowUpwardIcon />
+              </IconButton>
+            </Tooltip>
+            <LanguageSwitcher />
+          </Toolbar>
+        </AppBar>
+      </ShowWhenScrolledDown>
+      <div className={styleSet.socialButton}>
+        <TelegramLoginButton
+          botName="utsdskgmbot"
+          dataOnauth={props.onTelegramAuth}
+          className={styleSet.telegramButton}
+        />
+        <LanguageSwitcher />
+      </div>
+      <Typography variant="h2" component="h1" className={styleSet.title}>
+        <Trans i18nKey="pageTitle">
+          User:
+          <Hidden only={["sm", "md", "lg", "xl"]}>
+            <br />
+          </Hidden>
+          Eana Hufwe
+        </Trans>
+      </Typography>
+      <Typography variant="subtitle1" className={styleSet.subtitle}>
+        <Trans i18nKey="pageDesc">
+          Eana’s user page. A simple and rough about-me page heavily inspired by{" "}
+          <Link
+            href="https://en.wikipedia.org/wiki/Wikipedia:Userboxes"
+            color="primary"
+          >
+            Wikipedia Userboxes
+          </Link>
+          .
+        </Trans>
+      </Typography>
+    </header>
+  );
+}
