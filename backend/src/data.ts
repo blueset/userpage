@@ -12,10 +12,11 @@ type LangString = {
 };
 
 type Item = {
-    name: LangString,
     desc?: LangString,
     details?: LangString,
-    level: number
+    level: number,
+    leftImage?: string,
+    rightImage?: string,
 };
 
 type Category = {
@@ -45,7 +46,7 @@ type AuthInfo = {
 type VerifiedEntriesOutcome = {
     data: Category[],
     verified: AuthInfo | null,
-}
+};
 
 function filterEntries(entries: Category[], maxLevel: number = 0): Category[] {
     const filtered: Category[] = [];

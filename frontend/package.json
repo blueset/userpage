@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.9.10",
+    "@material-ui/icons": "^4.9.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -10,11 +12,15 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
+    "axios": "^0.19.2",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
+    "markdown-to-jsx": "^6.11.1",
+    "node-sass": "^4.13.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
+    "telegram-login-button": "^0.0.2",
     "typescript": "~3.7.2"
   },
   "scripts": {
@@ -40,6 +46,7 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.6",
+    "@types/markdown-to-jsx": "^6.11.0",
     "nodemon": "^2.0.3"
   },
   "proxy": "http://127.0.0.1:3000"

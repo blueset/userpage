@@ -1,6 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
-import { getEntriesByTelegramID } from "./data";
+import { getEntriesWithVerification } from "./data";
 
 const app = express();
 
@@ -27,7 +27,7 @@ app.get("/test", (req, res) => {
 });
 
 app.get("/data", (req, res) => {
-    const data = getEntriesByTelegramID();
+    const data = getEntriesWithVerification();
     res.json(data);
 });
 
@@ -36,7 +36,7 @@ app.post("/data", (req, res) => {
     if (typeof req.body === "object" && req.body.id && req.body.hash) {
         payload = req.body;
     }
-    const data = getEntriesByTelegramID(payload);
+    const data = getEntriesWithVerification(payload);
     res.json(data);
 });
 
