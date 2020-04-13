@@ -44,7 +44,7 @@ export function LanguageSwitcher() {
           <MenuItem onClick={() => setLanguage("en")}>English</MenuItem>
           <MenuItem onClick={() => setLanguage("zh")}>中文</MenuItem>
           <MenuItem onClick={() => setLanguage("ja")}>日本語</MenuItem>
-          <MenuItem onClick={() => setLanguage("08n")}>Lìfya leNa’vi</MenuItem>
+          <MenuItem onClick={() => setLanguage("08n")}>Lì’fya leNa’vi</MenuItem>
         </Menu>
       </>
     );
