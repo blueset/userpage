@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import {i18n as i18nInterface } from "i18next";
 import { Link } from "@material-ui/core";
 import { MarkdownOptions } from "markdown-to-jsx";
+import { AgeValue } from "./components/entryMediaTypes/AgeBox";
 
 
 export function t_(i18n: i18nInterface, translatedString?: LangString): string | null {
@@ -28,6 +29,9 @@ export const commonMarkdownConfigs: MarkdownOptions = {
     overrides: {
         a: {
             component: Link
+        },
+        AgeValue: {
+            component: AgeValue
         }
     }
 };

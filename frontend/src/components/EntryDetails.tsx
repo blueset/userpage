@@ -1,9 +1,10 @@
 import { ItemType } from "../types";
 import React from "react";
-import { Dialog, DialogContent, DialogContentText, DialogActions, Button, Typography, makeStyles } from "@material-ui/core";
+import { Dialog, DialogContent, DialogContentText, DialogActions, Button, Typography, makeStyles, CardMedia } from "@material-ui/core";
 import { truthyString, t_, commonMarkdownConfigs } from "../utils";
 import Markdown from "markdown-to-jsx";
 import { useTranslation } from "react-i18next";
+import { EntryMedia } from "./EntryMedia";
 
 type EntryDetailsProps = {
     data: ItemType,
@@ -22,7 +23,8 @@ const styleConfig = makeStyles({
       flexDirection: "column"
     },
     image: {
-      width: "5rem",
+      width: "6rem",
+      height: "6rem",
       marginBottom: "0.5rem",
       marginRight: "0.5rem",
     },
@@ -47,26 +49,12 @@ export function EntryDetails(props: EntryDetailsProps) {
         aria-describedby="details-dialog-description"
       >
         <DialogContent>
-          <DialogContentText id="details-dialog-description">
+          <DialogContentText id="details-dialog-description" component="div">
             <div className={styleSet.titleRow}>
-              {(props.data.leftImage || props.data.rightImage) && (
-                <div className={styleSet.iconsColumn}>
-                  {props.data.leftImage && (
-                    <img
-                      className={styleSet.image}
-                      alt={`Left icon of ${props.data.desc}`}
-                      src={"images/" + props.data.leftImage}
-                    />
-                  )}
-                  {props.data.rightImage && (
-                    <img
-                      className={styleSet.image}
-                      alt={`Right icon of ${props.data.desc}`}
-                      src={"images/" + props.data.rightImage}
-                    />
-                  )}
-                </div>
-              )}
+              <div className={styleSet.iconsColumn}>
+                <EntryMedia left data={props.data} className={styleSet.image} />
+                <EntryMedia right data={props.data} className={styleSet.image} />
+              </div>
               <Typography
                 variant="h4"
                 component="h3"

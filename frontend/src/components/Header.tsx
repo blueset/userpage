@@ -41,8 +41,7 @@ type HeaderProps = {
     onTelegramAuth: (user: TelegramUser) => void
 }
 
-export function Header(props: HeaderProps) {
-  const styleSet = makeStyles({
+const styleConfig = makeStyles({
     title: {
       fontWeight: 700,
       letterSpacing: "-0.2rem",
@@ -65,7 +64,10 @@ export function Header(props: HeaderProps) {
     telegramButton: {
       display: "inline"
     },
-  })();
+  })
+
+export function Header(props: HeaderProps) {
+  const styleSet = styleConfig();
 
   const { t, i18n } = useTranslation();
 
@@ -93,11 +95,11 @@ export function Header(props: HeaderProps) {
         </AppBar>
       </ShowWhenScrolledDown>
       <div className={styleSet.socialButton}>
-        <TelegramLoginButton
+        {/* <TelegramLoginButton
           botName="utsdskgmbot"
           dataOnauth={props.onTelegramAuth}
           className={styleSet.telegramButton}
-        />
+        /> */}
         <LanguageSwitcher />
       </div>
       <Typography variant="h2" component="h1" className={styleSet.title}>

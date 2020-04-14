@@ -12,6 +12,9 @@ const resources = {
             "pageTitle": "User:<1><0></0></1>Eana Hufwe",
             "pageDesc": "Eana’s user page. A simple and rough about-me page heavily inspired by <2>Wikipedia Userboxes</2>.",
             "langSwitcher": "Switch language",
+            "entry_icon_alt": "{{ side }} icon of {{ name }}.",
+            "left": "Left",
+            "right": "Right",
             "hidden": {
                 "line2": {
                     "unauth": "Log in to see if you have access to more boxes.",

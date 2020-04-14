@@ -16,6 +16,8 @@ type Item = {
     level: number,
     leftImage?: string,
     rightImage?: string,
+    leftComponent?: string,
+    rightComponent?: string,
 };
 
 type Category = {
@@ -47,7 +49,7 @@ type VerifiedEntriesOutcome = {
     verified: AuthInfo | null,
 };
 
-function filterEntries(entries: Category[], maxLevel: number = 0): Category[] {
+function filterEntries(entries: Category[], maxLevel: number = 100): Category[] {
     const filtered: Category[] = [];
     for (const i of entries) {
         const items = i.items.filter((v) => v.level <= maxLevel);

@@ -43,6 +43,48 @@ class App extends React.Component<{}, AppState> {
           '"Segoe UI Symbol"',
         ].join(","),
       },
+      overrides: {
+        MuiCssBaseline: {
+          "@global": {
+            ":lang(zh)": {
+              fontFamily: [
+                '"Inter V"',
+                "Inter",
+                "Source Han Sans SC",
+                "Noto Sans CJK SC",
+                "-apple-system",
+                "BlinkMacSystemFont",
+                '"Helvetica Neue"',
+                "Roboto",
+                '"Segoe UI"',
+                "Arial",
+                "sans-serif",
+                '"Apple Color Emoji"',
+                '"Segoe UI Emoji"',
+                '"Segoe UI Symbol"',
+              ].join(","),
+            },
+            ":lang(ja)": {
+              fontFamily: [
+                '"Inter V"',
+                "Inter",
+                "Source Han Sans",
+                "Noto Sans CJK",
+                "-apple-system",
+                "BlinkMacSystemFont",
+                '"Helvetica Neue"',
+                "Roboto",
+                '"Segoe UI"',
+                "Arial",
+                "sans-serif",
+                '"Apple Color Emoji"',
+                '"Segoe UI Emoji"',
+                '"Segoe UI Symbol"',
+              ].join(","),
+            },
+          },
+        },
+      },
     });
 
     this.state = {

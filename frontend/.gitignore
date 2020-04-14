@@ -18,6 +18,9 @@ build
 .env.test.local
 .env.production.local
 
+# Static images for privacy
+public/images
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

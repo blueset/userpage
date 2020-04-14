@@ -11,6 +11,8 @@ export type ItemType = {
     level: number,
     leftImage?: string,
     rightImage?: string,
+    leftComponent?: string,
+    rightComponent?: string,
 };
 
 export type CategoryType = {

@@ -10,7 +10,7 @@ type HiddenEntriesProps = {
 const stylesConfig = makeStyles({
   cardContent: {
     display: "flex",
-    height: "6em",
+    height: "7em",
     justifyContent: "center",
     alignItems: "center",
   },

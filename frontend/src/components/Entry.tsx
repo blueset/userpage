@@ -1,15 +1,36 @@
 import { ItemType } from "../types"
 import React from "react"
-import { Grid, Card, CardContent, Typography, makeStyles, CardActionArea, CardMedia } from "@material-ui/core";
+import { Grid, Card, CardContent, Typography, makeStyles, CardActionArea, CardMedia, styled } from "@material-ui/core";
 import Markdown from "markdown-to-jsx";
 import { EntryDetails } from "./EntryDetails";
 import { t_, commonMarkdownConfigs } from "../utils";
 import { useTranslation } from "react-i18next";
+import { EntryMedia } from "./EntryMedia";
 
 
 type EntryProps = {
     data: ItemType
 }
+
+const styleConfig = makeStyles({
+  card: {
+    height: "6rem",
+    display: "flex",
+    alignItems: "center",
+  },
+  cardContent: {
+    flexGrow: 1,
+  },
+  cardMedia: {
+    width: "6rem",
+    height: "6rem",
+    flexShrink: 0,
+    alignSelf: "start",
+  },
+  description: {
+    lineHeight: 1.2
+  },
+});
 
 export function Entry(props: EntryProps) {
 
@@ -21,25 +42,7 @@ export function Entry(props: EntryProps) {
 
     const [open, setOpen] = React.useState(false);
 
-    const styleSet = makeStyles({
-      card: {
-        height: "6rem",
-        display: "flex",
-        alignItems: "center",
-      },
-      cardContent: {
-        flexGrow: 1,
-        maxWidth: `calc(100% - ${widthSubtraction}rem)`,
-        // height: "6rem",
-      },
-      cardMedia: {
-        width: "6rem",
-        alignSelf: "start",
-      },
-      description: {
-        lineHeight: 1.2
-      },
-    })();
+    const styleSet = styleConfig();
 
     const desc = t_(i18n, props.data.desc);
 
@@ -55,14 +58,13 @@ export function Entry(props: EntryProps) {
       <Grid item xs={12} sm={6} lg={4}>
         <Card>
           <CardActionArea className={styleSet.card} onClick={openDetails}>
-            {props.data.leftImage && (
-              <CardMedia
-                className={styleSet.cardMedia}
-                component="img"
-                image={"images/" + props.data.leftImage}
-              />
-            )}
-            <CardContent className={styleSet.cardContent}>
+            <EntryMedia left data={props.data} className={styleSet.cardMedia} />
+            <CardContent
+              className={styleSet.cardContent}
+              style={{
+                maxWidth: `calc(100% - ${widthSubtraction}rem)`,
+              }}
+            >
               <Typography
                 color="textSecondary"
                 className={styleSet.description}
@@ -74,13 +76,11 @@ export function Entry(props: EntryProps) {
                 </Markdown>
               </Typography>
             </CardContent>
-            {props.data.rightImage && (
-              <CardMedia
-                className={styleSet.cardMedia}
-                component="img"
-                image={"images/" + props.data.rightImage}
-              />
-            )}
+            <EntryMedia
+              right
+              data={props.data}
+              className={styleSet.cardMedia}
+            />
             <div />
           </CardActionArea>
         </Card>
