@@ -6,6 +6,7 @@ import { commonMarkdownConfigs, t_ } from "../utils";
 import { AgeBox } from "./entryMediaTypes/AgeBox";
 import { TextBox } from "./entryMediaTypes/TextBox";
 import { useTranslation } from "react-i18next";
+import { DateBox } from "./entryMediaTypes/DateBox";
 
 type EntryMediaProps = {
     data: ItemType,
@@ -42,6 +43,10 @@ const EntryMedia = function (props: EntryMediaProps) {
                 },
                 TextBox: {
                     component: TextBox,
+                    props: {className: props.className}
+                },
+                DateBox: {
+                    component: DateBox,
                     props: {className: props.className}
                 }
             }

@@ -4,6 +4,7 @@ import {i18n as i18nInterface } from "i18next";
 import { Link } from "@material-ui/core";
 import { MarkdownOptions } from "markdown-to-jsx";
 import { AgeValue } from "./components/entryMediaTypes/AgeBox";
+import { Kbd } from "./components/Kbd";
 
 
 export function t_(i18n: i18nInterface, translatedString?: LangString): string | null {
@@ -32,6 +33,9 @@ export const commonMarkdownConfigs: MarkdownOptions = {
         },
         AgeValue: {
             component: AgeValue
-        }
+        },
+        kbd: {
+            component: Kbd
+        },
     }
 };

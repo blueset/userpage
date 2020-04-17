@@ -37,6 +37,8 @@ class App extends React.Component<{}, AppState> {
           "Roboto",
           '"Segoe UI"',
           "Arial",
+          "Source Han Sans SC",
+          "Noto Sans CJK SC",
           "sans-serif",
           '"Apple Color Emoji"',
           '"Segoe UI Emoji"',

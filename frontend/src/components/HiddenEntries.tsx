@@ -10,11 +10,12 @@ type HiddenEntriesProps = {
 const stylesConfig = makeStyles({
   cardContent: {
     display: "flex",
-    height: "7em",
+    height: "100%",
     justifyContent: "center",
     alignItems: "center",
   },
   card: {
+    height: "6rem",
     borderStyle: "dashed",
     borderWidth: 3,
     backgroundColor: "rgba(66, 66, 66, 0.3)",
@@ -40,11 +41,17 @@ export function HiddenEntries(props: HiddenEntriesProps) {
   }
 
   return (
-    <Grid item xs={12}>
+    <Grid item xs={12} sm={6} lg={4}>
       <Card variant="outlined" className={stylesSet.card}>
         <CardContent className={stylesSet.cardContent}>
           <Typography color="textSecondary">
-            {t("hidden.line1", {count: props.count, defaultValue: "There is {{count}} entry not shown here.", defaultValue_plural: "There are {{count}} entries not shown here."})} {line2}
+            {t("hidden.line1", {
+              count: props.count,
+              defaultValue: "There is {{count}} entry not shown here.",
+              defaultValue_plural:
+                "There are {{count}} entries not shown here.",
+            })}{" "}
+            {line2}
           </Typography>
         </CardContent>
         <div />

@@ -15,12 +15,12 @@ type EntryDetailsProps = {
 const styleConfig = makeStyles({
     titleRow: {
       display: "flex",
-      flexDirection: "row",
+      flexDirection: "column",
       marginBottom: "1rem",
     },
     iconsColumn: {
       display: "flex",
-      flexDirection: "column"
+      flexDirection: "row"
     },
     image: {
       width: "6rem",
@@ -29,7 +29,7 @@ const styleConfig = makeStyles({
       marginRight: "0.5rem",
     },
     title: {
-      fontWeight: 600,
+      fontWeight: 300,
       lineHeight: 1,
       letterSpacing: "-0.05rem"
     }

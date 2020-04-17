@@ -20,6 +20,7 @@ const styleConfig = makeStyles({
   },
   cardContent: {
     flexGrow: 1,
+    margin: "auto 0",
   },
   cardMedia: {
     width: "6rem",
@@ -57,7 +58,7 @@ export function Entry(props: EntryProps) {
     return (
       <Grid item xs={12} sm={6} lg={4}>
         <Card>
-          <CardActionArea className={styleSet.card} onClick={openDetails}>
+          <CardActionArea component="div" className={styleSet.card} onClick={openDetails}>
             <EntryMedia left data={props.data} className={styleSet.cardMedia} />
             <CardContent
               className={styleSet.cardContent}
