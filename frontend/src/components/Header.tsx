@@ -69,7 +69,7 @@ const styleConfig = makeStyles({
 export function Header(props: HeaderProps) {
   const styleSet = styleConfig();
 
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <header id="header-anchor">

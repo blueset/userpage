@@ -1,5 +1,4 @@
 import { LangString } from "./types";
-import { useTranslation } from "react-i18next";
 import {i18n as i18nInterface } from "i18next";
 import { Link } from "@material-ui/core";
 import { MarkdownOptions } from "markdown-to-jsx";

@@ -1,6 +1,6 @@
 import { ItemType } from "../types"
 import React from "react"
-import { Grid, Card, CardContent, Typography, makeStyles, CardActionArea, CardMedia, styled } from "@material-ui/core";
+import { Grid, Card, CardContent, Typography, makeStyles, CardActionArea } from "@material-ui/core";
 import Markdown from "markdown-to-jsx";
 import { EntryDetails } from "./EntryDetails";
 import { t_, commonMarkdownConfigs } from "../utils";

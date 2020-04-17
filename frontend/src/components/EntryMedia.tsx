@@ -1,12 +1,13 @@
 import React from "react";
 import { ItemType } from "../types";
-import { makeStyles, CardMedia, Link } from "@material-ui/core";
+import { CardMedia, Link } from "@material-ui/core";
 import Markdown from "markdown-to-jsx";
-import { commonMarkdownConfigs, t_ } from "../utils";
+import { t_ } from "../utils";
 import { AgeBox } from "./entryMediaTypes/AgeBox";
 import { TextBox } from "./entryMediaTypes/TextBox";
 import { useTranslation } from "react-i18next";
 import { DateBox } from "./entryMediaTypes/DateBox";
+import { AwesomeBox } from "./entryMediaTypes/AwesomeBox";
 
 type EntryMediaProps = {
     data: ItemType,
@@ -48,7 +49,11 @@ const EntryMedia = function (props: EntryMediaProps) {
                 DateBox: {
                     component: DateBox,
                     props: {className: props.className}
-                }
+                },
+                AwesomeBox: {
+                    component: AwesomeBox,
+                    props: {className: props.className}
+                },
             }
         }}>{component}</Markdown>);
     }

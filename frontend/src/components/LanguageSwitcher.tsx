@@ -1,5 +1,5 @@
 import React from "react";
-import { IconButton, Button, Tooltip, Menu, MenuItem } from "@material-ui/core";
+import { IconButton, Tooltip, Menu, MenuItem } from "@material-ui/core";
 import TranslateIcon from "@material-ui/icons/Translate";
 import { useTranslation } from "react-i18next";
 

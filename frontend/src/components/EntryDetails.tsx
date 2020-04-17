@@ -1,6 +1,6 @@
 import { ItemType } from "../types";
 import React from "react";
-import { Dialog, DialogContent, DialogContentText, DialogActions, Button, Typography, makeStyles, CardMedia } from "@material-ui/core";
+import { Dialog, DialogContent, DialogContentText, DialogActions, Button, Typography, makeStyles } from "@material-ui/core";
 import { truthyString, t_, commonMarkdownConfigs } from "../utils";
 import Markdown from "markdown-to-jsx";
 import { useTranslation } from "react-i18next";
