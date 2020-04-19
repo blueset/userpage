@@ -1,6 +1,9 @@
 import express from "express";
 import bodyParser from "body-parser";
 import { getEntriesWithVerification } from "./data";
+import path from "path";
+
+const frontendPath = path.join(__dirname, "..", "..", "frontend", "build");
 
 const app = express();
 
@@ -8,22 +11,9 @@ app.set("port", process.env.PORT || 3000);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
-    res.send("Hello, world!");
-});
-
-app.get("/test", (req, res) => {
-    res.send(`
-    <body>
-    <script async src="https://telegram.org/js/telegram-widget.js?8" data-telegram-login="utsdskgmbot" data-size="large" data-onauth="onTelegramAuth(user)" data-request-access="write"></script>
-    <script type="text/javascript">
-    function onTelegramAuth(user) {
-        console.log(user);
-        alert('Logged in as ' + user.first_name + ' ' + user.last_name + ' (' + user.id + (user.username ? ', @' + user.username : '') + ')');
-    }
-    </script>
-    </body>
-`);
+app.use(express.static(frontendPath));
+app.get('/', function (req, res) {
+    res.sendFile(path.join(frontendPath, 'index.html'));
 });
 
 app.get("/data", (req, res) => {
