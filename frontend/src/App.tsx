@@ -52,6 +52,7 @@ class App extends React.Component<{}, AppState> {
               fontFamily: [
                 '"Inter V"',
                 "Inter",
+                "source-han-sans-simplified-c",
                 "Source Han Sans SC",
                 "Noto Sans CJK SC",
                 "-apple-system",
@@ -70,6 +71,7 @@ class App extends React.Component<{}, AppState> {
               fontFamily: [
                 '"Inter V"',
                 "Inter",
+                "source-han-sans-cjk-ja",
                 "Source Han Sans",
                 "Noto Sans CJK",
                 "-apple-system",

@@ -53,5 +53,6 @@
     "@types/markdown-to-jsx": "^6.11.0",
     "nodemon": "^2.0.3"
   },
-  "proxy": "http://127.0.0.1:3000"
+  "proxy": "http://127.0.0.1:3000",
+  "homepage": "."
 }

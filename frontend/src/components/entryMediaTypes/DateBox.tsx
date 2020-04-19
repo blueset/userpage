@@ -24,7 +24,7 @@ export function DateBox(props: DateBoxProps) {
       fontWeight: parseInt(props.fontWeight || "500"),
       backgroundColor: props.backgroundColor,
       color: props.color,
-      fontFamily: props.monospace ? "monospace" : undefined,
+      fontVariantNumeric: props.monospace ? "tabular-nums" : undefined,
     },
   })();
   return (
