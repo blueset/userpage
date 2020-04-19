@@ -45,6 +45,8 @@ export function EntryDetails(props: EntryDetailsProps) {
       <Dialog
         open={props.open}
         onClose={props.onClose}
+        fullWidth={true}
+        maxWidth="sm"
         scroll="paper"
         aria-describedby="details-dialog-description"
       >

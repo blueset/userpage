@@ -95,11 +95,11 @@ export function Header(props: HeaderProps) {
         </AppBar>
       </ShowWhenScrolledDown>
       <div className={styleSet.socialButton}>
-        {/* <TelegramLoginButton
+        <TelegramLoginButton
           botName="utsdskgmbot"
           dataOnauth={props.onTelegramAuth}
           className={styleSet.telegramButton}
-        /> */}
+        />
         <LanguageSwitcher />
       </div>
       <Typography variant="h2" component="h1" className={styleSet.title}>

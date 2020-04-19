@@ -1,3 +1,7 @@
+* {
+  font-feature-settings: "palt" 1;
+}
+
 .App {
   text-align: center;
 }

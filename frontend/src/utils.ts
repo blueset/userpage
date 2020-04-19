@@ -4,6 +4,7 @@ import { Link } from "@material-ui/core";
 import { MarkdownOptions } from "markdown-to-jsx";
 import { AgeValue } from "./components/entryMediaTypes/AgeBox";
 import { Kbd } from "./components/Kbd";
+import { TooltipAbbr } from "./components/entryMediaTypes/TooltipAbbr";
 
 
 export function t_(i18n: i18nInterface, translatedString?: LangString): string | null {
@@ -35,6 +36,9 @@ export const commonMarkdownConfigs: MarkdownOptions = {
         },
         kbd: {
             component: Kbd
+        },
+        abbr: {
+            component: TooltipAbbr
         },
     }
 };
