@@ -26,8 +26,6 @@ export function HiddenEntries(props: HiddenEntriesProps) {
 
   const { t } = useTranslation();
 
-  if (props.count < 1) return null;
-
   const stylesSet = stylesConfig();
 
   // let line2 = t("Log in to see if you have access to more boxes.");

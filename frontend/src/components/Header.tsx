@@ -4,6 +4,8 @@ import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import TelegramLoginButton, { TelegramUser } from "telegram-login-button";
 import { useTranslation, Trans } from "react-i18next";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { AuthInfo } from "../types";
+import { TelegramAuth } from "./TelegramAuth";
 
 
 type ShowWhenScrolledDownProps = {
@@ -38,7 +40,9 @@ function backToTopOnClick (event: React.MouseEvent<HTMLElement>) {
 };
 
 type HeaderProps = {
-    onTelegramAuth: (user: TelegramUser) => void
+    onTelegramAuth: (user: TelegramUser) => void,
+    onLogOut: () => void,
+    currentUser: AuthInfo | null,
 }
 
 const styleConfig = makeStyles({
@@ -60,10 +64,6 @@ const styleConfig = makeStyles({
       minHeight: "4rem",
       padding: "1rem 0",
       textAlign: "right",
-    },
-    telegramButton: {
-      display: "inline",
-      verticalAlign: "bottom",
     },
   })
 
@@ -96,10 +96,10 @@ export function Header(props: HeaderProps) {
         </AppBar>
       </ShowWhenScrolledDown>
       <div className={styleSet.socialButton}>
-        <TelegramLoginButton
-          botName="utsdskgmbot"
-          dataOnauth={props.onTelegramAuth}
-          className={styleSet.telegramButton}
+        <TelegramAuth
+          onTelegramAuth={props.onTelegramAuth}
+          onLogOut={props.onLogOut}
+          currentUser={props.currentUser}
         />
         <LanguageSwitcher />
       </div>

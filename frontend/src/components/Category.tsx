@@ -34,7 +34,7 @@ export function Category(props: CategoryProps) {
           {props.data.items.map((v, idx) => (
             <Entry data={v} key={idx} />
           ))}
-          <HiddenEntries count={props.data.filtered || 0} authorized={props.authorized} />
+          {(props.data.filtered !== 0) && <HiddenEntries count={props.data.filtered || 0} authorized={props.authorized} />}
         </Grid>
       </section>
     );

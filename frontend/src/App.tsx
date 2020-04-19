@@ -5,15 +5,14 @@ import { amber, lightBlue } from '@material-ui/core/colors';
 import { Header } from './components/Header';
 import axios, { AxiosResponse } from "axios";
 import { VerifiedEntriesOutcome, AuthInfo, CategoryType} from './types';
-import { Category }  from './components/Category';
 import { TelegramUser } from 'telegram-login-button';
 import { Footer } from './components/Footer';
+import { Entries } from './components/Entries';
 
 
 type AppState = {
-  theme: Theme,
   loading: boolean,
-  user?: AuthInfo,
+  user: AuthInfo | null,
   entries?: CategoryType[]
 };
 
@@ -22,6 +21,41 @@ class App extends React.Component<{}, AppState> {
 
   constructor(props: {}) {
     super(props);
+
+    this.state = {
+      loading: true,
+      user: null,
+    };
+  }
+
+  private async load(authData?: TelegramUser) {
+    this.setState({ loading: true });
+    let resp: AxiosResponse<VerifiedEntriesOutcome> | undefined = undefined;
+    if (authData) {
+      resp = await axios.post<VerifiedEntriesOutcome>("./data", authData);
+    } else {
+      resp = await axios.get<VerifiedEntriesOutcome>("./data");
+    }
+    this.setState({
+      loading: false,
+      entries: resp?.data.data,
+      user: resp.data.verified,
+    });
+  }
+
+  async componentDidMount() {
+    await this.load();
+  }
+
+  async onLogIn(data: TelegramUser) {
+    await this.load(data);
+  }
+
+  async onLogOut() {
+    await this.load();
+  }
+
+  render() {
     const theme = createMuiTheme({
       palette: {
         type: "dark",
@@ -92,49 +126,22 @@ class App extends React.Component<{}, AppState> {
       },
     });
 
-    this.state = {
-      theme,
-      loading: true
-    };
-  }
-
-  private async load(authData?: TelegramUser) {
-    this.setState({loading: true});
-    let resp: AxiosResponse<VerifiedEntriesOutcome> | undefined = undefined;
-    if (authData) {
-      resp = await axios.post<VerifiedEntriesOutcome>("./data", authData);
-    } else {
-      resp = await axios.get<VerifiedEntriesOutcome>("./data");
-    }
-    this.setState({
-      loading: false,
-      entries: resp?.data.data
-    });
-  }
-
-  async componentDidMount() {
-    await this.load();
-  }
-
-  async onLogIn(data: TelegramUser) {
-    await this.load(data);
-  }
-
-  render() {
     return (
-      <ThemeProvider theme={this.state.theme}>
+      <ThemeProvider theme={theme}>
         <CssBaseline />
         <Container maxWidth="lg">
-          <Header onTelegramAuth={(data) => {this.onLogIn(data)}}/>
-          {
-            this.state.entries && this.state.entries.map((v, idx) => (
-              <Category data={v} key={idx} authorized={!!this.state.user}/>
-            ))
-          }
+          <Header
+            currentUser={this.state.user}
+            onLogOut={() => this.onLogOut()}
+            onTelegramAuth={(data) => {
+              this.onLogIn(data);
+            }}
+          />
+          <Entries entries={this.state.entries} user={this.state.user} />
           <Footer />
         </Container>
         <Backdrop open={this.state.loading}>
-          <CircularProgress color="inherit"/>
+          <CircularProgress color="inherit" />
         </Backdrop>
       </ThemeProvider>
     );
