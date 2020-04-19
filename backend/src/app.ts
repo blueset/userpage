@@ -12,8 +12,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(frontendPath));
-app.get('/', function (req, res) {
-    res.sendFile(path.join(frontendPath, 'index.html'));
+app.get("/", function (req, res) {
+    res.sendFile(path.join(frontendPath, "index.html"));
 });
 
 app.get("/data", (req, res) => {
