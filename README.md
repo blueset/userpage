@@ -1,4 +1,8 @@
-Eana’d User Page
-================
+User:Eana Hufwe
+===============
 
-Largely inspired by [Wikipedia User Boxes](https://en.wikipedia.org/wiki/Wikipedia:Userboxes).
+Eana’s user page. A simple and rough about-me page heavily inspired by Wikipedia Userboxes.
+
+Built with Node.js, Express, and React.
+
+
