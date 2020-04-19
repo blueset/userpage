@@ -62,7 +62,8 @@ const styleConfig = makeStyles({
       textAlign: "right",
     },
     telegramButton: {
-      display: "inline"
+      display: "inline",
+      verticalAlign: "bottom",
     },
   })
 

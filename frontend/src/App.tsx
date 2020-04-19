@@ -7,6 +7,7 @@ import axios, { AxiosResponse } from "axios";
 import { VerifiedEntriesOutcome, AuthInfo, CategoryType} from './types';
 import { Category }  from './components/Category';
 import { TelegramUser } from 'telegram-login-button';
+import { Footer } from './components/Footer';
 
 
 type AppState = {
@@ -101,11 +102,11 @@ class App extends React.Component<{}, AppState> {
     this.setState({loading: true});
     let resp: AxiosResponse<VerifiedEntriesOutcome> | undefined = undefined;
     if (authData) {
-      resp = await axios.post<VerifiedEntriesOutcome>("/data", {
+      resp = await axios.post<VerifiedEntriesOutcome>("./data", {
         data: authData
       });
     } else {
-      resp = await axios.get<VerifiedEntriesOutcome>("/data");
+      resp = await axios.get<VerifiedEntriesOutcome>("./data");
     }
     this.setState({
       loading: false,
@@ -132,6 +133,7 @@ class App extends React.Component<{}, AppState> {
               <Category data={v} key={idx} authorized={!!this.state.user}/>
             ))
           }
+          <Footer />
         </Container>
         <Backdrop open={this.state.loading}>
           <CircularProgress color="inherit"/>

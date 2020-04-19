@@ -15,6 +15,7 @@ const resources = {
             "entry_icon_alt": "{{ side }} icon of {{ name }}.",
             "left": "Left",
             "right": "Right",
+            "footer": "User page made by <1>Eana Hufwe</1>. View source on <3>GitHub</3>.",
             "hidden": {
                 "line2": {
                     "unauth": "Log in to see if you have access to more boxes.",
@@ -31,6 +32,7 @@ const resources = {
             "pageTitle": "利用者:<1><0></0></1>Eana Hufwe",
             "pageDesc": "Eana の利用者ページです。<2>ウィキペディア・ユーザーボックス</2>にインスパイアされたシンプルかつラフな「Eana について」のページです。",
             "langSwitcher": "言語の切り替え",
+            "footer": "User page by <1>Eana Hufwe</1>. <3>GitHub</3>.",
             "hidden": {
                 "line2": {
                     "unauth": "ログインして、もっとマス目を開けるかどうかを確認しましょう。",
@@ -46,6 +48,7 @@ const resources = {
             "pageTitle": "用户:<1><0></0></1>Eana Hufwe",
             "pageDesc": "Eana 的用户页。一个简单、粗糙的关于页面，启发自<2>维基百科用户框</2>。",
             "langSwitcher": "切换语言",
+            "footer": "User page by <1>Eana Hufwe</1>. <3>GitHub</3>.",
             "hidden": {
                 "line2": {
                     "unauth": "登录试试，看看是否可以显示更多信息。",
