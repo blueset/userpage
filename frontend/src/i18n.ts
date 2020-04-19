@@ -10,6 +10,7 @@ const resources = {
         translations: {
             "goToTop": "Go to top",
             "pageTitle": "User:<1><0></0></1>Eana Hufwe",
+            "barTitle": "User:Eana Hufwe",
             "pageDesc": "Eana’s user page. A simple and rough about-me page heavily inspired by <2>Wikipedia Userboxes</2>.",
             "langSwitcher": "Switch language",
             "entry_icon_alt": "{{ side }} icon of {{ name }}.",
@@ -30,6 +31,7 @@ const resources = {
         translations: {
             "goToTop": "トップへ",
             "pageTitle": "利用者:<1><0></0></1>Eana Hufwe",
+            "barTitle": "利用者:Eana Hufwe",
             "pageDesc": "Eana の利用者ページです。<2>ウィキペディア・ユーザーボックス</2>にインスパイアされたシンプルかつラフな「Eana について」のページです。",
             "langSwitcher": "言語の切り替え",
             "footer": "User page by <1>Eana Hufwe</1>. <3>GitHub</3>.",
@@ -46,6 +48,7 @@ const resources = {
         translations: {
             "goToTop": "返回顶部",
             "pageTitle": "用户:<1><0></0></1>Eana Hufwe",
+            "barTitle": "用户:Eana Hufwe",
             "pageDesc": "Eana 的用户页。一个简单、粗糙的关于页面，启发自<2>维基百科用户框</2>。",
             "langSwitcher": "切换语言",
             "footer": "User page by <1>Eana Hufwe</1>. <3>GitHub</3>.",
@@ -61,6 +64,7 @@ const resources = {
     "08n": {
         translations: {
             "pageTitle": "Saryu:<1><0></0></1>Eana Hufwe",
+            "barTitle": "Saryu:Eana Hufwe",
             "pageDesc": "Saryu puk Eanä. Teri-puk afyin aekxtxu, slantire si <2>Wikipedia saryu-yì</2>l。",
         }
     }

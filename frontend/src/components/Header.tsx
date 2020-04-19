@@ -78,7 +78,7 @@ export function Header(props: HeaderProps) {
         <AppBar>
           <Toolbar>
             <Typography variant="h6" className={styleSet.toolbarTitle}>
-              Eana’s User Page
+              {t("barTitle", "User:Eana Hufwe")}
             </Typography>
             <Tooltip title={t("goToTop", "Go to top") as string}>
               <IconButton
