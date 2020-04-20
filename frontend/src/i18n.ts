@@ -65,7 +65,7 @@ const resources = {
         translations: {
             "pageTitle": "Saryu:<1><0></0></1>Eana Hufwe",
             "barTitle": "Saryu:Eana Hufwe",
-            "pageDesc": "Saryu puk Eanä. Teri-puk afyin aekxtxu, slantire si <2>Wikipedia saryu-yì</2>l。",
+            "pageDesc": "Saryu puk Eanä. Teri-puk afyin aekxtxu, slantire si <2>Wikipedia saryu-yì</2>l.",
         }
     }
 };
