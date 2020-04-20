@@ -98,7 +98,7 @@ It has been <AgeValue since={1587300000000} /> year(s) since then.
 #### Add more...
 See `frontend/src/utils.ts`.
 
-### Existing custom components in all contexts
+### Existing custom components in box compoenents
 #### `<AgeBox>`
 Show number of years past from a timestamp.
 
