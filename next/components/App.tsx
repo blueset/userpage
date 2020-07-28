@@ -43,9 +43,9 @@ class App extends React.Component<AppProps, AppState> {
     this.setState({ loading: true });
     let resp: AxiosResponse<VerifiedEntriesOutcome> | undefined = undefined;
     if (authData) {
-      resp = await axios.post<VerifiedEntriesOutcome>("./data", authData);
+      resp = await axios.post<VerifiedEntriesOutcome>("./api/data", authData);
     } else {
-      resp = await axios.get<VerifiedEntriesOutcome>("./data");
+      resp = await axios.get<VerifiedEntriesOutcome>("./api/data");
     }
     this.setState({
       loading: false,
