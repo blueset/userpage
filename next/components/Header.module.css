@@ -1,0 +1,19 @@
+.title {
+  font-weight: 700 !important;
+  letter-spacing: -0.2rem;
+  line-height: 0.8 !important;
+  margin-bottom: 0.2em !important;
+}
+.toolbarTitle {
+  font-weight: 700 !important;
+  letter-spacing: -0.02em;
+  flex-grow: 1;
+}
+.subtitle {
+  line-height: 1 !important;
+}
+.socialButton {
+  min-height: 4rem;
+  padding: 1rem 0;
+  text-align: right;
+}

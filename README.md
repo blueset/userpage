@@ -19,28 +19,26 @@ Built with Node.js, Express, React, Material-UI and Next.js.
 
 ## Build and run in development environment
 
-### 1. Add necessary data to run (see below)
+### 1. Fill in necessary data (see below)
 
-### 2. Backend
-```shell
-cd backend
-npm install
-PORT=3000 npm run dev
+### 2. Build
+```
+cd next
+yarn install
+yarn build
 ```
 
-### 3. Frontend
-```shell
-cd frontend
-yarn install
-PORT=3001 yarn start
+### 3. Start server
+```
+yarn serve
 ```
 
 ## Where to change?
 - Title, subtitle, footer, open-graph information, etc are all hardcoded.
-- List of supported languages in `frontend/src/components/LangSwitcher.tsx`
-- Translated strings in `frontend/src/i18n.ts`
-- Telegram Bot ID in `frontend/src/components/TelegramAuth.tsx`
-- Database file in `backend/src/static/data.yaml`
+- List of supported languages in `next/components/LangSwitcher.tsx`
+- Translated strings in `next/utils/i18n.ts`
+- Telegram Bot ID in `next/components/TelegramAuth.tsx`
+- Database file in `next/_data/data.yaml`
 
 ### Structure of `data.yaml`
 
@@ -145,7 +143,7 @@ Usage:
 ```
 
 #### Add more...
-See `frontend/src/components/EntryMedia.tsx`.
+See `next/components/EntryMedia.tsx`.
 
 
 ## License

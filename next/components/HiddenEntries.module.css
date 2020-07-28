@@ -1,0 +1,12 @@
+.cardContent {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  height: 6rem;
+  border-style: dashed;
+  border-width: 3;
+  background-color: rgba(66, 66, 66, 0.3);
+}
