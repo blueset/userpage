@@ -1,5 +1,5 @@
 .root {
-  display: flex;
+  display: flex !important;
   justify-content: center;
   align-items: center;
   font-size: 3rem;
