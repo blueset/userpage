@@ -5,7 +5,7 @@ Eana’s user page. A simple and rough about-me page heavily inspired by [Wikipe
 
 [See demo here](https://labs.1a23.com/userpage/).
 
-Built with Node.js, Express, React, and Material-UI.
+Built with Node.js, Express, React, Material-UI and Next.js.
 
 ![Home screen](images/home.png)
 ![Details screen](images/details.png)
