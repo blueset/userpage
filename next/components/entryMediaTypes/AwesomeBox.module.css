@@ -1,0 +1,17 @@
+.root {
+  display: flex !important;
+  flex-direction: column;
+  border: solid 2px #fff;
+  justify-content: center;
+  line-height: 1;
+  text-align: right;
+  font-size: 1.5rem;
+  font-weight: 500;
+  background-color: #000;
+  color: #fff;
+  position: relative;
+}
+.span {
+  position: absolute;
+  right: 0.65rem;
+}

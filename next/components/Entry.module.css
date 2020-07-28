@@ -1,0 +1,18 @@
+.card {
+    height: 6rem;
+    display: flex !important;
+    align-items: center !important;
+}
+.cardContent {
+    flex-grow: 1;
+    margin: auto 0;
+}
+.cardMedia {
+    width: 6rem !important;
+    height: 6rem;
+    flex-shrink: 0;
+    align-self: start;
+}
+.description {
+    line-height: 1.2
+}
