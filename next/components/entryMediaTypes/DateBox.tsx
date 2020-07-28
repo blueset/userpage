@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles, CardMedia } from "@material-ui/core";
+import { CardMedia } from "@material-ui/core";
 import moment from "moment";
 
 type DateBoxProps = {
@@ -13,8 +13,10 @@ type DateBoxProps = {
 };
 
 export function DateBox(props: DateBoxProps) {
-  const styleSet = makeStyles({
-    root: {
+  return (
+    <CardMedia
+      className={`${props.className}`}
+      style={{
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
@@ -25,11 +27,7 @@ export function DateBox(props: DateBoxProps) {
       backgroundColor: props.backgroundColor,
       color: props.color,
       fontVariantNumeric: props.monospace ? "tabular-nums" : undefined,
-    },
-  })();
-  return (
-    <CardMedia
-      className={`${props.className} ${styleSet.root}`}
+    }}
       component="div"
     >
       {moment().format(props.format)}
