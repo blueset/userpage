@@ -13,7 +13,7 @@
     "express": "^4.17.1",
     "i18next": "^19.4.1",
     "i18next-browser-languagedetector": "^4.0.2",
-    "markdown-to-jsx": "^6.11.1",
+    "markdown-to-jsx": "^6.11.4",
     "moment": "^2.24.0",
     "node-sass": "^4.13.1",
     "react": "^16.13.1",
