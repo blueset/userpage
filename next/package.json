@@ -15,7 +15,7 @@
     "i18next-browser-languagedetector": "^5.0.0",
     "markdown-to-jsx": "^7.4.0",
     "moment": "^2.29.4",
-    "next": "^14.2.10",
+    "next": "^14.2.15",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-i18next": "^11.7.0",
